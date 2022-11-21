@@ -1,6 +1,6 @@
 
 
-
+import java.lang.Math;
 public class Bonk {
     
     public static void fibonacci(int quanti) {
@@ -16,6 +16,31 @@ public class Bonk {
             res = x + y;
             
         }
+    }
+
+    public static void equaz_2(int a, int b, int c){
+       
+       /*( -b + o - sqrt(b^2 - 4ac))/2;*/
+       double soluz1 = 0;
+       double soluz2 = 0;
+       boolean risolvibile=true;
+       double delta=b*b-4*a*c;
+       if((b*b - 4*a*c)>=0){
+            soluz1 = (-b + Math.sqrt(delta))/2*a;
+            soluz2 = (-b - Math.sqrt(delta))/2*a;
+        }
+       else{
+            risolvibile = false;
+       }
+       if(risolvibile=true){
+            System.out.printf("sol 1: %.3f", soluz1);
+            System.out.printf("\nsol 2: %.3f", soluz2);
+           
+       }
+       else{
+            System.out.println("non risolvibile nel campo dei reali");
+       }
+
     }
 
     public static void ego(String nome) {
@@ -50,6 +75,6 @@ public class Bonk {
 
     
     public static void main(String[] args) {
-        ego("ciccio");
+        equaz_2(1, -4, 2);
     }
 }
