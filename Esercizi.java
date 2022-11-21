@@ -125,12 +125,45 @@ public class Esercizi {
         }
     }
 
-    public static void max_int()
+    public static void max_int(){
+        Scanner scan = new Scanner(System.in); 
+        System.out.print("Input number: "); 
+        int command = scan.nextInt();
+        int sum=0;
+        for (int i=1 ; i<command ; i++){
+            sum += i;
+            if (sum+i+1>command){
+                System.out.println("il massimo intero è: "+i);
+                break;
+            }
+        }
+    }
+
+    static boolean doppie(){
+        Scanner scan = new Scanner(System.in); 
+        System.out.print("Input string: "); 
+        String command = scan.next();
+        boolean doppie = false;
+        for (int i=0; i<command.length(); i++){
+            if (i!=(command.length()-1) && command.charAt(i)==command.charAt(i+1)){
+                doppie=true;
+                System.out.println("ci sono doppie");
+                return(doppie);
+            }
+        }
+        if(doppie==false){
+            System.out.print("non ci sono doppie");
+            return(doppie);
+        }
+
+        return(doppie);
+        
+    }
         
     
 
     
     public static void main(String[] args) {
-        abs(-5);
+        doppie();
     }
 }
