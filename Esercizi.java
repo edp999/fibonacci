@@ -23,23 +23,24 @@ public class Esercizi {
        /*( -b + o - sqrt(b^2 - 4ac))/2;*/
        double soluz1 = 0;
        double soluz2 = 0;
-       boolean risolvibile=true;
+       boolean risolvibile=false;
        double delta=b*b-4*a*c;
-       if((b*b - 4*a*c)>=0){
+       if((delta)>=0){
             soluz1 = (-b + Math.sqrt(delta))/2*a;
             soluz2 = (-b - Math.sqrt(delta))/2*a;
+            risolvibile=true;
         }
        else{
             risolvibile = false;
-       }
-       if(risolvibile=true){
+       };
+       if(risolvibile==true){
             System.out.printf("sol 1: %.3f", soluz1);
             System.out.printf("\nsol 2: %.3f", soluz2);
            
        }
        else{
             System.out.println("non risolvibile nel campo dei reali");
-       }
+       };
 
     }
 
@@ -75,6 +76,6 @@ public class Esercizi {
 
     
     public static void main(String[] args) {
-        equaz_2(1, -4, 2);
+        equaz_2(3, 4,4);
     }
 }
