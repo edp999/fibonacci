@@ -1,5 +1,5 @@
 
-
+import java.util.Scanner;
 import java.lang.Math;
 public class Esercizi {
     
@@ -70,12 +70,67 @@ public class Esercizi {
         System.out.println(" - - +");
         }
         
+    public static void decrescente(int x){
+        int numb = x;
+        if (String.valueOf(x).length() != 5){
+            System.out.println("ERRORE");
+        }
+        else{
+            while(numb>=150){
+                System.out.println(numb);
+                numb-=2;
+            }
+        }
+    }
+
+    public static void compreso(int A, int B, int C){
+        if (A<B==true && B<C==true){
+            System.out.println("Compreso");
+        }
+        else{
+            System.out.println("Non compreso");
+        }
+    }
+
+    public static void pari(int num){
+        if(num%2==0){
+            System.out.println("numero pari");
+        }
+        else{
+            System.out.println("numero dispari");
+        }
+    }
+
+    public static void sommatrice(){
+        Scanner scan = new Scanner(System.in); 
         
+        System.out.print("Input number: "); 
+        int command = scan.nextInt();
+        int sum = command;
+        while(command != 0){
+            System.out.print("Input number: "); 
+            command = scan.nextInt();
+            sum+=command;
+        }
+        System.out.println(sum);
+           
+    }
+
+    public static void abs(int A){
+        if (A<0){
+            System.out.println(-A);
+        }
+        else{
+            System.out.println(A);
+        }
+    }
+
+    public static void max_int()
         
     
 
     
     public static void main(String[] args) {
-        equaz_2(3, 4,4);
+        abs(-5);
     }
 }
