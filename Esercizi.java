@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.lang.Math;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 import java.util.stream.*;
 public class Esercizi {
     
@@ -212,7 +213,99 @@ public class Esercizi {
         }
         
     }
+
+    public static int[][] matrici(){
+        Random rand = new Random();
+        int par1 = rand.nextInt(1,10);
+        System.out.println(par1);
+        int[][] matriche = new int[par1][par1];
+        
+        for(int i=0;i<par1;i++){
+            for(int j=0;j<par1;j++){
+                Random rand1 = new Random();
+                int insert = rand1.nextInt(1,10);
+                matriche[i][j]= insert;
+            }
+        }
+        System.out.println(java.util.Arrays.deepToString(matriche));
+        return(matriche);
+    }
+
+    public static int[][] mediamat(int[][] matriche){
+        int somma = 0;
+        int k = 0;
+        int par1 = matriche.length;
+        double media = 0;
+        int[] lista1 = new int[0];
+        int[] lista = new int[(par1)*(par1)];
+        for(int i=0;i<par1;i++){
+            for(int j=0;j<par1;j++){
+                somma+=matriche[i][j];
+                lista[k]=matriche[i][j];
+                k+=1;
+            }
+        }
+        System.out.print(java.util.Arrays.toString(lista));
+        media = somma/lista.length;
+        System.out.println(media);
+        System.out.println("lung"+lista.length);
+        double count = 0;
+        for(int i: lista){
+            if(i>media){
+                count+=1;
+            }
+        }
+        double dpar2 = Math.sqrt(count);
+        int par2 = (int)dpar2 + 1;
+        int[][] matr0 = new int[par2][par2];
+        int k0 =0;
+        boolean breaker = false;
+        for(int i=0;i<par2;i++){
+            for(int j=0;j<par2;j++){
+                if(k0==lista.length-1){
+                    breaker = true;
+                    break;
+                }
+                 
+                while(lista[k0]<=media){
+                    k0+=1;
+                    if(k0==lista.length-1){
+                        breaker = true;
+                        break;
+                    }
+                }
+                if(lista[k0]>media){
+                    
+                    matr0[i][j]=lista[k0];
+                    k0+=1;
+                    
+                }
+                if (breaker==true){
+                    break;
+                }
+                
+            }
+            if (breaker==true){
+                break;
+            }
+        }
+        System.out.println(java.util.Arrays.deepToString(matr0));
+        return(matr0);
+    }
     public static void main(String[] args) {
-        matrice_rand();
+        Random rand = new Random();
+        int par1 = rand.nextInt(1,10);
+        System.out.println(par1);
+        int[][] matriche = new int[par1][par1];
+        
+        for(int i=0;i<par1;i++){
+            for(int j=0;j<par1;j++){
+                Random rand1 = new Random();
+                int insert = rand1.nextInt(1,10);
+                matriche[i][j]= insert;
+            }
+        }
+        System.out.println(java.util.Arrays.deepToString(matriche));
+        mediamat(matriche);
     }
 }
