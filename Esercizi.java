@@ -1,6 +1,8 @@
 
 import java.util.Scanner;
 import java.lang.Math;
+import java.util.ArrayList;
+import java.util.List;
 public class Esercizi {
     
     public static void fibonacci(int quanti) {
@@ -139,7 +141,7 @@ public class Esercizi {
         }
     }
 
-    static boolean doppie(){
+    public static boolean doppie(){
         Scanner scan = new Scanner(System.in); 
         System.out.print("Input string: "); 
         String command = scan.next();
@@ -159,11 +161,37 @@ public class Esercizi {
         return(doppie);
         
     }
-        
-    
 
-    
+    public static void list_remove(int[] lista, int posto){
+        int[] l1 = new int[lista.length -1];
+        for(int i=0;i<lista.length;i++){
+            if (i<posto){
+                l1[i]=lista[i];
+            if (i>posto){
+                l1[i-1]=lista[i];
+            }
+            }
+        }
+
+    }
+
+    public static void matrice1(int lato, char carattere){
+        int[][] matriche = new int[lato][lato];
+        System.out.println(matriche);
+        for(int i=0; i<lato; i++){
+            for(int j=0; j<lato; j++){
+                if(i==j || i==(lato - j -1) || j==(lato - i -1)){
+                    System.out.print(carattere);
+                }
+                else{
+                    System.out.print(0);
+                }
+            }
+            System.out.print("\n");
+            
+        }
+    }
     public static void main(String[] args) {
-        doppie();
+        matrice1(20,'F');
     }
 }
