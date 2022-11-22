@@ -1,8 +1,9 @@
-
+import java.util.Random;
 import java.util.Scanner;
 import java.lang.Math;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.*;
 public class Esercizi {
     
     public static void fibonacci(int quanti) {
@@ -181,17 +182,37 @@ public class Esercizi {
         for(int i=0; i<lato; i++){
             for(int j=0; j<lato; j++){
                 if(i==j || i==(lato - j -1) || j==(lato - i -1)){
-                    System.out.print(carattere);
+                    System.out.print(carattere + " ");
                 }
                 else{
-                    System.out.print(0);
+                    System.out.print(0 + " ");
                 }
             }
             System.out.print("\n");
             
         }
     }
+
+    public static void matrice_rand(){
+        int[][] matriche = new int[4][3];
+        int[] arraglio = new int[3];
+        for(int i=0; i<4; i++){
+            for(int j=0; j<3; j++){
+                Random rand = new Random();
+                matriche[i][j]= rand.nextInt(1,10);
+                System.out.print(matriche[i][j] + "  ");
+                arraglio[j]+=matriche[i][j];
+            }
+            int sum = IntStream.of(matriche[i]).sum();
+            System.out.print(sum);
+            System.out.print("\n");
+        }
+        for(int i=0; i<3; i++){
+            System.out.print(arraglio[i] + " ");
+        }
+        
+    }
     public static void main(String[] args) {
-        matrice1(20,'F');
+        matrice_rand();
     }
 }
