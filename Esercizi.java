@@ -266,7 +266,6 @@ public class Esercizi {
                     breaker = true;
                     break;
                 }
-                 
                 while(lista[k0]<=media){
                     k0+=1;
                     if(k0==lista.length-1){
@@ -274,16 +273,13 @@ public class Esercizi {
                         break;
                     }
                 }
-                if(lista[k0]>media){
-                    
+                if(lista[k0]>media){      
                     matr0[i][j]=lista[k0];
-                    k0+=1;
-                    
+                    k0+=1;                 
                 }
                 if (breaker==true){
                     break;
-                }
-                
+                }  
             }
             if (breaker==true){
                 break;
