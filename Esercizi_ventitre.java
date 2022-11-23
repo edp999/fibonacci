@@ -64,8 +64,35 @@ class Esercizi_ventitre {
         
     }
 
+    public static boolean cerca_parola(String word, String filenome){
+        String testo = "";
+        try{
+            File file = new File("manzoni.txt");
+            Scanner sc = new Scanner(file);
+            while(sc.hasNextLine()){
+                testo+=sc.nextLine()+" ";
+            }
+            sc.close();
+        }  catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        boolean is_in = false;
+        String isn = "nope";
+        String[] dizionario = testo.split(" |\\t|,|;|\\.|\\?|!|-|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/|'|’");
+        System.out.println(java.util.Arrays.toString(dizionario));
+        for(String k: dizionario){
+            if(k.equals(word)){
+                is_in=true;
+                isn = "yes";
+            }
+        }
+        System.out.println(isn);
+        return(is_in);
+        
+    }
+
 
     public static void main(String[] args) {
-        rows();
+        cerca_parola("Alpi", "manzoni.txt");
     }
 }

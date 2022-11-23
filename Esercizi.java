@@ -255,8 +255,14 @@ public class Esercizi {
                 count+=1;
             }
         }
+        int par2 = 0;
         double dpar2 = Math.sqrt(count);
-        int par2 = (int)dpar2 + 1;
+        if((dpar2 % Math.round(dpar2))!=0){
+            par2 = (int)dpar2 + 1;
+        }
+        else{
+            par2 = (int)dpar2;
+        }
         int[][] matr0 = new int[par2][par2];
         int k0 =0;
         boolean breaker = false;
